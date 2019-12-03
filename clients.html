@@ -161,7 +161,24 @@
 				$(".add-new").removeAttr("disabled");
             });
             
+			//search for client
+			$(document).ready(function () {
 
+			(function ($) {
+
+    		$('#filter').keyup(function () {
+
+			var rex = new RegExp($(this).val(), 'i');
+			$('.searchable tr').hide();
+			$('.searchable tr').filter(function () {
+				return rex.test($(this).text());
+			}).show();
+
+    		})
+
+			}(jQuery));
+
+});
 		});
 		</script>
 	</head>
@@ -193,12 +210,16 @@
 											<div class="row">
                                                     <div class="col-sm-8"><h2>Client Details </h2></div>												
                                                     <div class="col-sm-4">
-													<button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+													<button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New Client</button>
                                                 </div>
 											</div>
 										</div>
+										<div class="input-group"> <span class="input-group-addon">Search</span>
+
+											<input id="filter" type="text" class="form-control" placeholder="Type here...">
+										</div>
                                         <table class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-                                                <thead>
+                                                <thead class="thead-light">
 												<tr>
                                                         <th>Client_ID</th>
                                                         <th>Name</th>
@@ -208,7 +229,7 @@
                                                         <th>Actions</th>
 												</tr>
 											</thead>
-											<tbody>
+											<tbody class="searchable">
 												<tr>
                                                         <td>1</td>
                                                         <td>Jimmy Sanders</td>
@@ -244,7 +265,127 @@
 														<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
 														<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
 													</td>
-												</tr>      
+												</tr> 
+												<tr>
+                                                        <td>4</td>
+                                                        <td>Jiagy Basoi</td>
+                                                        <td>(503) 555-9931</td>
+                                                        <td>jiagy@gmail.com</td>
+                                                        <td>Washington</td>
+													<td>
+														<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+														<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+														<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+													</td>
+												</tr>  
+												<tr>
+                                                        <td>5</td>
+                                                        <td>Aaya Yert</td>
+                                                        <td>(503) 555-9931</td>
+                                                        <td>Aaya@gmail.com</td>
+                                                        <td>Peru</td>
+													<td>
+														<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+														<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+														<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+													</td>
+												</tr> 
+												<tr>
+                                                        <td>6</td>
+                                                        <td>Janis Sinclair</td>
+                                                        <td>(503) 555-9931</td>
+                                                        <td>janis@gmail.com</td>
+                                                        <td>London</td>
+													<td>
+														<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+														<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+														<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+													</td>
+												</tr>  
+												<tr>
+                                                        <td>7</td>
+                                                        <td>Janis Sinclair</td>
+                                                        <td>(503) 555-9931</td>
+                                                        <td>janis@gmail.com</td>
+                                                        <td>London</td>
+													<td>
+														<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+														<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+														<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+													</td>
+												</tr>  
+												<tr>
+                                                        <td>8</td>
+                                                        <td>Perry Jida</td>
+                                                        <td>(503) 555-9931</td>
+                                                        <td>perry@gmail.com</td>
+                                                        <td>Portugal</td>
+													<td>
+														<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+														<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+														<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+													</td>
+												</tr>  
+												<tr>
+                                                        <td>9</td>
+                                                        <td>Gerald Somai</td>
+                                                        <td>(503) 555-9931</td>
+                                                        <td>gerald@gmail.com</td>
+                                                        <td>Cairo</td>
+													<td>
+														<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+														<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+														<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+													</td>
+												</tr>  
+												<tr>
+                                                        <td>10</td>
+                                                        <td>Janis Sinclair</td>
+                                                        <td>(503) 555-9931</td>
+                                                        <td>janis@gmail.com</td>
+                                                        <td>London</td>
+													<td>
+														<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+														<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+														<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+													</td>
+												</tr>  
+												<tr>
+                                                        <td>11</td>
+                                                        <td>Jinny Shareu</td>
+                                                        <td>(503) 555-9931</td>
+                                                        <td>jiny@gmail.com</td>
+                                                        <td>Singapore</td>
+													<td>
+														<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+														<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+														<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+													</td>
+												</tr>  
+												<tr>
+                                                        <td>12</td>
+                                                        <td>Habib Juma</td>
+                                                        <td>(503) 555-9931</td>
+                                                        <td>habib@yahoo.com</td>
+                                                        <td>Hamburg</td>
+													<td>
+														<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+														<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+														<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+													</td>
+												</tr>  
+												<tr>
+                                                        <td>13</td>
+                                                        <td>Rashaud Timba</td>
+                                                        <td>(503) 555-9931</td>
+                                                        <td>rashaud@gmail.com</td>
+                                                        <td>Yemen</td>
+													<td>
+														<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+														<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+														<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+													</td>
+												</tr>        
 											</tbody>
 										</table>
 									</div> 

@@ -12,7 +12,9 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+		<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet"/>
         
 
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -160,7 +162,27 @@ $(document).ready(function(){
 	$(document).on("click", ".delete", function(){
         $(this).parents("tr").remove();
 		$(".add-new").removeAttr("disabled");
-    });
+	});
+
+
+	$(document).ready(function () {
+
+(function ($) {
+
+    $('#filter').keyup(function () {
+
+        var rex = new RegExp($(this).val(), 'i');
+        $('.searchable tr').hide();
+        $('.searchable tr').filter(function () {
+            return rex.test($(this).text());
+        }).show();
+
+    })
+
+}(jQuery));
+
+});
+	
 
 });
 </script>
@@ -193,9 +215,13 @@ $(document).ready(function(){
 											<div class="row">
 												<div class="col-sm-8"><h2>Project Details </h2></div>
 												<div class="col-sm-4">
-													<button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+													<button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New Project</button>
 												</div>
 											</div>
+										</div>
+										<div class="input-group"> <span class="input-group-addon">Search</span>
+
+											<input id="filter" type="text" class="form-control" placeholder="Type here...">
 										</div>
                                         <table class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">											
                                             <thead>
@@ -208,7 +234,7 @@ $(document).ready(function(){
 													<th>Actions</th>
 												</tr>
 											</thead>
-											<tbody>
+											<tbody class="searchable">
 												<tr>
                                                     <td>1</td>
                                                     <td>1027</td>
@@ -245,6 +271,42 @@ $(document).ready(function(){
 														<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
 													</td>
 												</tr>      
+												<tr>
+														<td>4</td>
+														<td>1026</td>
+														<td>REST API</td>
+														<td>Bookstore API</td>
+														<td>5</td>
+														<td>
+															<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+															<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+															<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+														</td>
+													</tr> 
+													<tr>
+															<td>5</td>
+															<td>10456</td>
+															<td>Web Service</td>
+															<td>Event API</td>
+															<td>4</td>
+															<td>
+																<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+																<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+																<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+															</td>
+														</tr>      
+														<tr>
+																<td>6</td>
+																<td>102625</td>
+																<td>REST API</td>
+																<td>Pokemon API</td>
+																<td>1</td>
+																<td>
+																	<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+																	<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+																	<a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+																</td>
+															</tr>           
 											</tbody>
 										</table>
 									</div> 
